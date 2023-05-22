@@ -69,11 +69,6 @@ x = layers.Conv2D(32, (3, 3), activation='relu', padding='same')(input_img)
 x = layers.MaxPooling2D((2, 2), padding='same')(x)
 x = layers.Conv2D(32, (3, 3), activation='relu', padding='same')(x)
 encoded = layers.MaxPooling2D((2, 2), padding='same')(x)
-
-
-# Encoder output dimension is ## Mention the dimention ##
-
-# Write your decoder here
 x = layers.Conv2D(32, (3, 3), activation='relu', padding='same')(encoded)
 x = layers.UpSampling2D((2, 2))(x)
 x = layers.Conv2D(32, (3, 3), activation='relu', padding='same')(x)
@@ -84,40 +79,6 @@ autoencoder = keras.Model(input_img, decoded)
 
 autoencoder.summary()
 
-Model: "model"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- input_2 (InputLayer)        [(None, 28, 28, 1)]       0         
-                                                                 
- conv2d_3 (Conv2D)           (None, 28, 28, 32)        320       
-                                                                 
- max_pooling2d_2 (MaxPooling  (None, 14, 14, 32)       0         
- 2D)                                                             
-                                                                 
- conv2d_4 (Conv2D)           (None, 14, 14, 32)        9248      
-                                                                 
- max_pooling2d_3 (MaxPooling  (None, 7, 7, 32)         0         
- 2D)                                                             
-                                                                 
- conv2d_5 (Conv2D)           (None, 7, 7, 32)          9248      
-                                                                 
- up_sampling2d (UpSampling2D  (None, 14, 14, 32)       0         
- )                                                               
-                                                                 
- conv2d_6 (Conv2D)           (None, 14, 14, 32)        9248      
-                                                                 
- up_sampling2d_1 (UpSampling  (None, 28, 28, 32)       0         
- 2D)                                                             
-                                                                 
- conv2d_7 (Conv2D)           (None, 28, 28, 1)         289       
-                                                                 
-=================================================================
-Total params: 28,353
-Trainable params: 28,353
-Non-trainable params: 0
-_________________________________________________________________
-
 autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
 
 autoencoder.fit(x_train_noisy, x_train_scaled,
@@ -126,14 +87,10 @@ autoencoder.fit(x_train_noisy, x_train_scaled,
                 shuffle=True,
                 validation_data=(x_test_noisy, x_test_scaled))
 
-Epoch 1/2
-469/469 [==============================] - 153s 324ms/step - loss: 0.1643 - val_loss: 0.1186
-Epoch 2/2
-469/469 [==============================] - 147s 313ms/step - loss: 0.1148 - val_loss: 0.1103
+
 
 decoded_imgs = autoencoder.predict(x_test_noisy)
 
-313/313 [==============================] - 6s 20ms/step
 
 n = 10
 plt.figure(figsize=(20, 4))
@@ -163,7 +120,8 @@ plt.show()
 ## OUTPUT
 
 ### Training Loss, Validation Loss Vs Iteration Plot
-![200566849-4a550bf0-b7ab-4807-84d2-fe149915e823](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/9d29bce6-11f1-4d79-a742-c90b7b6182d3)
+
+![201087292-b7e48aa9-f593-4574-aef7-230932e420c2](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/197555b2-d32b-4f2a-824d-d84f507e27d9)
 
 
 
