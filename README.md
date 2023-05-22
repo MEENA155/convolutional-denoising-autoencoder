@@ -172,6 +172,7 @@ plt.show()
 ### Original vs Noisy Vs Reconstructed Image
 
 
+![200566863-647a6dac-83d0-48a5-87b5-c20a3b54c83d](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/78991848-2509-43c6-9481-4af0a924beca)
 
 
 ## RESULT
