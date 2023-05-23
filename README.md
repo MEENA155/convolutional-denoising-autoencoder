@@ -6,6 +6,9 @@ To develop a convolutional autoencoder for image denoising application.
 
 ## Problem Statement and Dataset
 Using autoencoder, we are trying to remove the noise added in the encoder part and tent to get the output which should be same as the input with minimal loss. The dataset which is used is mnist dataset.
+![240146288-bc36b44a-ea19-496e-ad59-9e13c006b1fe](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/348163d0-a7cd-44ff-90f0-83b43ca4fabb)
+## Convolution Autoencoder Network Model
+![240146350-aba61145-8263-40ec-99a5-bb28c0804a84](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/35494e73-4d37-4a0d-855d-9ccfa680900c)
 
 
 ## DESIGN STEPS
@@ -123,6 +126,7 @@ plt.show()
 
 ![201087292-b7e48aa9-f593-4574-aef7-230932e420c2](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/197555b2-d32b-4f2a-824d-d84f507e27d9)
 
+![240146784-bada8366-434a-4ad6-975f-9802b1209e62](https://github.com/MEENA155/convolutional-denoising-autoencoder/assets/94677128/c4b69e55-8b83-4818-974f-6ef431a706dc)
 
 
 ### Original vs Noisy Vs Reconstructed Image
